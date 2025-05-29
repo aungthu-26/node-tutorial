@@ -2,7 +2,7 @@
   "name": "node-crash-course",
   "version": "1.0.0",
   "description": "",
-  "main": "file.js",
+  "main": "server.js",
   "directories": {
     "doc": "docs"
   },
