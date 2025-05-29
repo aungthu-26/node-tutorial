@@ -1,5 +1,3 @@
-require('dotenv').config(); // Load .env if present
-
 const express = require('express');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
