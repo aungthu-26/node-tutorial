@@ -1,3 +1,5 @@
+require('dotenv').config(); // Load .env if present
+
 const express = require('express');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
@@ -6,12 +8,15 @@ const blogRoutes = require('./routes/blogRoutes');
 //express app
 const app = express();
 
+// Connect to MongoDB
+const dbURI = process.env.MONGO_URI;
+const PORT = process.env.PORT || 3002;
+
 //connect to mongodb
-// const dbURI = 'mongodb+srv://invisible26:invisible26@nodetuto.xdo2a2q.mongodb.net/node-tuto?retryWrites=true&w=majority';
-const dbURI = 'mongodb+srv://invisible26:invisible26@nodetuto.xdo2a2q.mongodb.net/node-tuto?retryWrites=true&w=majority&appName=nodetuto'
+// const dbURI = 'mongodb+srv://invisible26:invisible26@nodetuto.xdo2a2q.mongodb.net/node-tuto?retryWrites=true&w=majority&appName=nodetuto'
 
 mongoose.connect(dbURI)
-    .then((result) => app.listen(3002))
+    .then((result) => app.listen(PORT))
     .catch((err) => console.log(err));
 
 //register view engine
