@@ -9,11 +9,10 @@ const blogRoutes = require('./routes/blogRoutes');
 const app = express();
 
 // Connect to MongoDB
-const dbURI = process.env.MONGO_URI;
 const PORT = process.env.PORT || 3002;
 
 //connect to mongodb
-// const dbURI = 'mongodb+srv://invisible26:invisible26@nodetuto.xdo2a2q.mongodb.net/node-tuto?retryWrites=true&w=majority&appName=nodetuto'
+const dbURI = 'mongodb+srv://invisible26:invisible26@nodetuto.xdo2a2q.mongodb.net/node-tuto?retryWrites=true&w=majority&appName=nodetuto'
 
 mongoose.connect(dbURI)
     .then((result) => app.listen(PORT))
